@@ -4,6 +4,13 @@ library(extrafont)
 library(gridExtra)
 library(grid)
 library(ggpubr)
+library(ggbeeswarm)
+#font_import()
+
+fonts() # Vector of font family names
+fonttable() # Show entire table
+loadfonts() #loadfonts(quiet=TRUE)
+
 
 bird_collisions <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-30/bird_collisions.csv")
 mp_light <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-04-30/mp_light.csv")

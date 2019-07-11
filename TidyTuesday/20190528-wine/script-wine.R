@@ -3,6 +3,7 @@ library(ggpubr)
 library(ggrepel)
 library(tidytext)
 library(packcircles)
+library(grid)
 
 df_wines <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-05-28/winemag-data-130k-v2.csv")
 
@@ -30,7 +31,8 @@ df_top_variety <-
   top_n(10,points)%>%
   mutate(icon=emoji('wine_glass'))
 
-setwd('/home/romimendez/Romi/Proyectos/miercolesdata/tidy/20190527-wine')
+LOCAL<-'C:/Users/Steven/Documents/GitHub/Tidy_Thusday_Visualizations/TidyTuesday/20190528-wine'
+setwd(LOCAL)
 
 df_wines_1=df_wines%>%count(points,variety)%>%
   filter(n>50)%>%top_n(10,points)

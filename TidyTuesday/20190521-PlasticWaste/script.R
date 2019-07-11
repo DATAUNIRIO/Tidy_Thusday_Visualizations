@@ -66,7 +66,9 @@ gg <-
 
 gg
   
-img_a <- png::readPNG("1.png") 
+#img_a <- png::readPNG("1.png") 
+img_a <- jpeg::readJPEG('C:/Users/Steven/Documents/GitHub/Tidy_Thusday_Visualizations/TidyTuesday/20190521-PlasticWaste/plot.jpg')
+
 a <- grid::rasterGrob(img_a, interpolate = T) 
 
 gg1=
@@ -116,4 +118,35 @@ ggarrange(
                                    family = "Finger Paint"      ),
         plot.subtitle = element_text(colour = 'white',size = 10,hjust = 0.5,
                                    family ="Atma SemiBold" ),
+        plot.margin = unit(c(1,0,0.1,0), "cm"))
+
+
+
+
+#####################################################################################
+library(extrafont)
+# tem que fazer:
+# 1. download da fonte do site https://www.dafont.com/
+# 2. Clicar na fonte com botao direito do mouse e pedir para instalar
+# 3. carregar a nova fonte no R com o comando font_import()
+# 4. escrever "yes"
+font_import()
+loadfonts(quiet = TRUE)
+
+ggarrange(
+  gg,gg1,
+  ncol = 2, nrow = 1,widths = c(0.9,1.4))+
+  labs(caption=paste0("Source: Our World In Data | by @r0mymendez",emoji("heart")),
+       subtitle = ' ',
+       title=paste0('Global Plastic Waste - year: 2010',emoji('earth_americas'))) +
+  theme(plot.background = element_rect(fill='#2a2a2a',color ='#2a2a2a'),
+        plot.caption = element_text(colour = 'white',size = 13,hjust = 1,
+                                    #family= "Finger Paint"  ),
+                                    family= "Kristen ITC"  ),
+        plot.title  = element_text(colour = 'white',size = 30,hjust = 0.5,
+                                  # family = "Finger Paint"      ),
+                                    family = "Old English Text MT"),
+        plot.subtitle = element_text(colour = 'white',size = 10,hjust = 0.5,
+                                  #   family ="Atma SemiBold" ),
+                                      family ="Magneto" ),
         plot.margin = unit(c(1,0,0.1,0), "cm"))

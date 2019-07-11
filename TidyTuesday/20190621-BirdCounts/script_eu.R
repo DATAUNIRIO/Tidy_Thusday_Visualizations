@@ -1,6 +1,9 @@
 rm(list=ls())
 bird_counts <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-18/bird_counts.csv")
-setwd('.../tidy/20190621-bird')
+
+LOCAL<-'C:/Users/Steven/Documents/GitHub/Tidy_Thusday_Visualizations/TidyTuesday/20190621-BirdCounts/'
+setwd(LOCAL)
+remove(LOCAL)
 
 library(grid)
 library(emojifont)

@@ -1,5 +1,10 @@
 rm(list=ls())
 
+LOCAL<-'C:/Users/Steven/Documents/GitHub/Tidy_Thusday_Visualizations/TidyTuesday/20190701/'
+setwd(LOCAL)
+remove(LOCAL)
+
+
 library(tidyverse)
 library(emojifont)
 library(gridExtra)

@@ -57,6 +57,7 @@ p0=
                               face = 'bold')
   )
 
+p0
 
 df.country=nobel_winners%>%count(birth_country)%>%top_n(10,n)%>%arrange((n))
 usa=nobel_winners%>%filter(birth_country=='United States of America')%>%
@@ -86,6 +87,8 @@ p1=
         panel.background =element_rect(fill='#2a2a2a',color ='#2a2a2a' )
         )
 
+p1
+
 uk=nobel_winners%>%filter(birth_country=='United Kingdom')%>%
   count(category)
 
@@ -113,6 +116,7 @@ p2=ggplot(uk,aes(category,n,fill=category))+
         
   )
 
+p2
 
 Germany=nobel_winners%>%filter(birth_country=='Germany')%>%
   count(category)
@@ -140,6 +144,8 @@ p3=ggplot(Germany,aes(category,n,fill=category))+
         panel.background =element_rect(fill='#2a2a2a',color ='#2a2a2a' )
         
   )
+
+p3
 
 
 df.genero=nobel_winners%>%filter(is.na(gender)==F)%>%count(gender,category)
@@ -169,7 +175,7 @@ p4=ggplot(df.genero,
         plot.title =  element_text(colour = 'white',
                            family="Atma Light",face = 'bold'))
 
-
+p4
 
 
 ggarrange(

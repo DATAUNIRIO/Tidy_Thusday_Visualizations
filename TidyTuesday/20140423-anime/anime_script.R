@@ -12,7 +12,8 @@ tidy_anime <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience
 df=tidy_anime%>%select(title_english,studio,type,source,scored_by,score,rating,rank,popularity)
 df=unique(df%>%filter(is.na(title_english)==FALSE))
 
-imgage1 <- png::readPNG("16.png")
+#imgage1 <- png::readPNG("16.png")
+imgage1 <- png::readPNG("C:/Users/Steven/Documents/GitHub/Tidy_Thusday_Visualizations/TidyTuesday/20140423-anime/16.png")
 
  g0=
   df%>%count(rating)%>%filter(is.na(rating)==F)%>%
@@ -32,7 +33,7 @@ imgage1 <- png::readPNG("16.png")
                     -Inf, Inf, -Inf, Inf) +
   
   geom_col(show.legend = F,color='black')+
-  scale_fill_ghibli_d("MarnieMedium1")+
+  #scale_fill_ghibli_d("MarnieMedium1")+
   coord_flip()+
   labs(x='',y='',title='Anime: classification and studios',subtitle='')+
   theme_bw()+
@@ -47,8 +48,9 @@ imgage1 <- png::readPNG("16.png")
         )
  
 
-imgage <- png::readPNG("16.png")
-
+#imgage <- png::readPNG("16.png")
+imgage <- png::readPNG("C:/Users/Steven/Documents/GitHub/Tidy_Thusday_Visualizations/TidyTuesday/20140423-anime/16.png")
+ 
 
 g1=
   df%>%count(studio)%>%filter(is.na(studio)==F)%>%
@@ -60,7 +62,7 @@ g1=
                                height = unit(1,"npc")), 
                     -Inf, Inf, -Inf, Inf) +
   geom_col(show.legend = F,color='black',alpha=0.6)+
-  scale_fill_ghibli_d("MarnieMedium1")+
+  #scale_fill_ghibli_d("MarnieMedium1")+
   coord_flip()+
   labs(x='',y='')+
   theme_bw()+
@@ -75,8 +77,9 @@ g1=
   )
 
 
+#img_a <- png::readPNG("6.png") 
+img_a <- png::readPNG("C:/Users/Steven/Documents/GitHub/Tidy_Thusday_Visualizations/TidyTuesday/20140423-anime/16.png")
 
-img_a <- png::readPNG("6.png") 
 a <- grid::rasterGrob(img_a, interpolate = T) 
 
 
@@ -94,7 +97,7 @@ g2=
   filter(studio=='Toei Animation')%>%
   ggplot(aes(x=rank,y=popularity,color=rating)) +
   geom_point()+
-  scale_color_ghibli_d("MarnieMedium1") +
+  #scale_color_ghibli_d("MarnieMedium1") +
   annotation_custom(a, xmin = 8000, xmax = 16000,
                      ymin = 0, ymax = 6000)  +
   labs(x = "Ranking", y = "Popularity",
@@ -111,7 +114,8 @@ g2=
   )
 
 
-imgagec <- jpeg::readJPEG("sp4.jpg")
+#imgagec <- jpeg::readJPEG("sp4.jpg")
+imgagec <- png::readPNG("C:/Users/Steven/Documents/GitHub/Tidy_Thusday_Visualizations/TidyTuesday/20140423-anime/16.png")
 
 
 g4= ggplot() + annotation_custom(rasterGrob(imgagec, 

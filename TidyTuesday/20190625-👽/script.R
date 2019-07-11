@@ -33,6 +33,7 @@ img_b <- png::readPNG("2.png")
 b <- grid::rasterGrob(img_b, interpolate = T) 
 
 world_map <- map_data("world")
+
 g2=
   ggplot() +
   geom_polygon(data=world_map, aes(x = long, y = lat, group = group),
